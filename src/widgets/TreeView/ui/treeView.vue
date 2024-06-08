@@ -52,10 +52,6 @@ const toggleNode = (id: string) => {
   }
 }
 
-// const rerender = () => {
-//   const tempOpenedNodes = new Set(openedNodes.value)
-//   openedNodes.value = tempOpenedNodes
-// }
 const rerender = () => {
   rerenderCounter.value++
 }
