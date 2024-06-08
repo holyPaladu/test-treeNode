@@ -1,0 +1,13 @@
+.tree-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem;
+  align-items: center;
+  img {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  p {
+    font: normal 400 1.6rem / normal Roboto;
+  }
+}

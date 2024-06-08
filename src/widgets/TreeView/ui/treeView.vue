@@ -13,7 +13,6 @@ interface TreeNodeData {
 
 const treeData = ref<TreeNodeData[]>([])
 const openedNodes = ref<Set<string>>(new Set())
-const rerenderCounter = ref<number>(0)
 
 const fetchTreeData = async () => {
   try {
@@ -53,14 +52,14 @@ const toggleNode = (id: string) => {
 }
 
 const rerender = () => {
-  rerenderCounter.value++
+  treeData.value = [...treeData.value]
 }
 
 onMounted(fetchTreeData)
 </script>
 
 <template>
-  <button @click="rerender">Ререндер {{ rerenderCounter }}</button>
+  <button @click="rerender">Ререндер</button>
   <nav v-for="item in treeData" :key="item.id">
     <TreeNode :item="item" :openedNodes="openedNodes" @toggle="toggleNode" />
   </nav>

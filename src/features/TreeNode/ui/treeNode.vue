@@ -26,9 +26,10 @@ const toggle = () => {
 </script>
 
 <template>
-  <div :style="{ paddingLeft: `${level * 20}px` }">
-    <div @click="toggle" :style="{ background: isOpened ? '#e0e0e0' : '#f0f0f0' }">
-      {{ item.title }}
+  <div :style="{ background: isOpened ? '#e0e0e0' : '#f0f0f0' }">
+    <div @click="toggle" :style="{ marginLeft: `${level * 20}px` }" class="tree-item">
+      <img src="../model/arrow-down.png" alt="arrow-down" />
+      <p>{{ item.title }}</p>
     </div>
     <div v-if="isOpened">
       <TreeNode
